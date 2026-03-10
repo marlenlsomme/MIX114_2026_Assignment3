@@ -37,6 +37,7 @@
     }
 
     // 6. Attach click event to each mole
-    for (let i = 0; i <= moles.length; i++) {
+    // error in for loop i must be less than length
+    for (let i = 0; i < moles.length; i++) {
       moles[i].addEventListener("click", whackMole);
     }
