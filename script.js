@@ -12,7 +12,8 @@
       }
 
       // Show a random one
-      const randomIndex = Math.floor(Math.random() * moles.lenght); 
+      // typo in property name
+      const randomIndex = Math.floor(Math.random() * moles.length); 
       moles[randomIndex].style.display = "block";
     }
 
