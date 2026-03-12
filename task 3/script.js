@@ -2,7 +2,8 @@
     let score = 0;
 
     // 2. Grab references to all moles
-    const moles = document.getElementsByClassName("moles");
+    //typo in class name
+    const moles = document.getElementsByClassName("mole");
 
     // 3. Function to show one random mole at a time
     function showRandomMole() {
@@ -12,14 +13,16 @@
       }
 
       // Show a random one
-      const randomIndex = Math.floor(Math.random() * moles.lenght); 
+      // typo in property name
+      const randomIndex = Math.floor(Math.random() * moles.length); 
       moles[randomIndex].style.display = "block";
     }
 
     // 4. Function to "whack" a mole
     function whackMole() {
       // Increase the score
-      scor += 1; 
+      // typo in variable name
+      score += 1; 
       document.getElementById("score").innerText = score;
       
       // Hide the mole you just hit
@@ -37,6 +40,7 @@
     }
 
     // 6. Attach click event to each mole
-    for (let i = 0; i <= moles.length; i++) {
+    // error in for loop i must be less than length
+    for (let i = 0; i < moles.length; i++) {
       moles[i].addEventListener("click", whackMole);
     }
