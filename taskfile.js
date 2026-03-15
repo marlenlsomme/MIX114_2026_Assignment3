@@ -1,28 +1,37 @@
-//Task 1. a
-function splitLines(text) {
-    return text.split("\n")
-}
 
 //Task 2 - To-do list
 function addItem() {
+
     const inputElement = document.getElementById('userInput');
     const inputValue = inputElement.value;
 
     if (inputValue !=="") {
+
+        const container = document.getElementById('list');
+        
+        const newItem = document.createElement('li');
+
         const checkbox = document.createElement('input');
         checkbox.type = "checkbox";
 
-        const newItem = document.createElement('li');
-        newItem.textContent = inputValue;
-
-        const container = document.getElementById('list');
+        checkbox.addEventListener("change", function () {
+            if (checkbox.checked) {
+                newItem.style.textDecoration = "line-through"
+            }
+            else {
+                newItem.style.textDecoration = "none"
+            }
+        });
+        
+        newItem.appendChild(checkbox);
+        newItem.append(" " + inputValue);
+        
         container.appendChild(newItem);
 
         inputElement.value = "";
+        }   
     }
-}
 
-//legg inn addeventlistener for checked/unchecked//
 
 function deleteItem() {
     const element = document.getElementById('elementId');

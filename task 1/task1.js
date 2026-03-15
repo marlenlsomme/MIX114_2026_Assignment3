@@ -1,3 +1,8 @@
+//Task 1. a
+function splitLines(text) {
+    return text.split("\n")
+}
+
 //Task 1. b
 
 function TextToArray (textlist){
