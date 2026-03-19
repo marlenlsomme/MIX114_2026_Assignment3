@@ -15,29 +15,24 @@ function addItem() {
         checkbox.type = "checkbox";
 
         checkbox.addEventListener("change", function () {
-            if (checkbox.checked) {
-                newItem.style.textDecoration = "line-through"
-            }
-            else {
-                newItem.style.textDecoration = "none"
-            }
+            newItem.classList.toggle("completed");
+        });
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+
+        deleteButton.addEventListener("click", function () {
+            newItem.remove();
         });
         
+        newItem.appendChild(deleteButton);
         newItem.appendChild(checkbox);
         newItem.append(" " + inputValue);
-        
+
         container.appendChild(newItem);
 
         inputElement.value = "";
         }   
     }
 
-
-function deleteItem() {
-    const element = document.getElementById('elementId');
-    if (element) {
-        element.remove();
-        console.log('Element with id "${elementId}" has been removed from the list.');
-    }
-}
 
